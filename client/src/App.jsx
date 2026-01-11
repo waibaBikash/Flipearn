@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Marketplace from './pages/Marketplace'
 import MyListing from './pages/MyListing'
@@ -8,14 +8,18 @@ import ManageListing from './pages/ManageListing'
 import Massages from './pages/Massages'
 import MyOrder from './pages/MyOrder'
 import Loading from './pages/Loading'
+import Navbar from './components/Navbar'
 
 const App = () => {
+
+  const {pathname} = useLocation();
   return (
     <div>
+      {!pathname.includes('/admin') && <Navbar />}
       <Routes>
          <Route path='/' element={<Home/>}/>
          <Route path='/marketplace' element={<Marketplace/>}/>
-         <Route path='/mylisting' element={<MyListing/>}/>
+         <Route path='/my-listing' element={<MyListing/>}/>
          <Route path='/listing/:listingId' element={<ListingDetails/>}/>
          <Route path='/create-listing' element={<ManageListing/>}/>
          <Route path='/edit-listing/:id' element={<ManageListing/>}/>
