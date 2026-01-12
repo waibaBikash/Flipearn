@@ -2,11 +2,17 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { MenuIcon, XIcon } from 'lucide-react'
+import { useClerk, useUser } from '@clerk/clerk-react'
 
 const Navbar = () => {
-  const navigate = useNavigate()
+
+  const {user} = useUser()
+  const {openSignIn} = useClerk()
 
   const [menuOpen, setMenuOpen] = React.useState(false)
+
+  const navigate = useNavigate()
+
   return (
      <nav className='h-20'>
                 <div className='fixed left-0 top-0 right-0 z-100 flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white transition-all'>
@@ -16,7 +22,7 @@ const Navbar = () => {
                     <div className='hidden sm:flex items-center gap-4 md:gap-8 max-md:text-sm text-gray-800'>
                         <Link to='/' onClick={() => scrollTo(0, 0)}> Home </Link>
                         <Link to='/marketplace' onClick={() => scrollTo(0, 0)}> Marketplace </Link>
-                        <Link to='/massages' onClick={() => scrollTo(0, 0)}> Massages </Link>
+                        <Link to={user ? '/massages' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> Massages </Link>
                         <Link to='/my-listing' onClick={() => scrollTo(0, 0)}> My Listing </Link>
                         
                     </div>
