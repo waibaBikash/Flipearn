@@ -45,16 +45,25 @@ const Hero = () => {
                         <div className="z-10 absolute bottom-0 left-0 w-full scale-120" >
                             <img src='https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/hero/gradient_arc.svg' alt="gradient" />
                         </div>
-                    </span> <span className='relative bg-gradient-to-r from-[#764de1] to-indigo-600 bg-clip-text text-transparent'>Profile</span> online.
+                    </span> <span className='relative bg-gradient-to-r from-[#764de1] to-indigo-600 bg-clip-text text-transparent'>
+                    Profile</span> 
+                    online.
                 </h1>
 
-                <p className="max-w-xl text-center text-base my-7">A secure marketplace to buy and sell Instagram, YouTuve, telegram and more -fast, safe and hassle-free.</p>
+                <p 
+                 className="max-w-xl text-center text-base my-7">A secure marketplace to buy and sell Instagram, 
+                 YouTuve, telegram and more -fast, safe and hassle-free.</p>
 
                 {/* Search Box */}
                 <form onSubmit={onSubmitHandler} className='w-full flex justify-center group'>
                     <label className='border border-gray-400 rounded-md p-1 flex items-center w-full max-w-md'>
-                        <input onChange={e => setInput(e.target.value)} value={input} type="text" placeholder='Instagram account' className='pl-2 flex-1 outline-none' />
-                        <button className='bg-indigo-600 text-white p-3 px-6 rounded-md cursor-pointer'> Search </button>
+                        <input 
+                         onChange={e => setInput(e.target.value)} value={input}
+                         type="text" placeholder='Instagram account' 
+                         className='pl-2 flex-1 outline-none' />
+                        <button 
+                        className='bg-indigo-600 text-white p-3 px-6 rounded-md cursor-pointer'> Search 
+                        </button>
                     </label>
                 </form>
             </div>
