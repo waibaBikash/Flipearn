@@ -34,7 +34,7 @@ const Navbar = () => {
                     </div>
 
                     <div>
-                        <button 
+                        <button onClick={openSignIn}
                         className='max-sm:hidden cursor-pointer px-8 py-2 bg-indigo-500 hover:bg-indigo-600 transition text-white rounded-full'>Login</button>
                         <MenuIcon onClick={() => setMenuOpen(true)} className='sm:hidden' />
                     </div>
