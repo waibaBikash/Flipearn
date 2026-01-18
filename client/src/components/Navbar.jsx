@@ -29,7 +29,7 @@ const Navbar = () => {
                         <Link to='/' onClick={() => scrollTo(0, 0)}> Home </Link>
                         <Link to='/marketplace' onClick={() => scrollTo(0, 0)}> Marketplace </Link>
                         <Link to={user ? '/massages' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> Massages </Link>
-                        <Link to='/my-listing' onClick={() => scrollTo(0, 0)}> My Listing </Link>
+                        <Link to={user ? '/my-listing' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> My Listing </Link>
                         
                     </div>
 
