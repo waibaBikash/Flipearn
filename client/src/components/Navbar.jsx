@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { MenuIcon, XIcon } from 'lucide-react'
-import { useClerk, useUser } from '@clerk/clerk-react'
+import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 
 const Navbar = () => {
 
@@ -33,11 +33,18 @@ const Navbar = () => {
                         
                     </div>
 
-                    <div>
+                    {!user ? (
+                         <div>
                         <button onClick={openSignIn}
                         className='max-sm:hidden cursor-pointer px-8 py-2 bg-indigo-500 hover:bg-indigo-600 transition text-white rounded-full'>Login</button>
                         <MenuIcon onClick={() => setMenuOpen(true)} className='sm:hidden' />
                     </div>
+                    )
+                     : (
+                        <UserButton />
+                     )}
+
+                   
 
                 </div>
                 {/* Mobile Menu */}
