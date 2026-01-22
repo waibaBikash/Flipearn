@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
-import { MenuIcon, XIcon } from 'lucide-react'
+import { GripIcon, MenuIcon, XIcon } from 'lucide-react'
 import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 
 const Navbar = () => {
@@ -41,7 +41,11 @@ const Navbar = () => {
                     </div>
                     )
                      : (
-                        <UserButton />
+                        <UserButton >
+                            <UserButton.MenuItems>
+                                <UserButton.Action label='Marketplace' labelIcon={<GripIcon size={16}/>} onClick={()=> navigate('/marketplace')}/>
+                            </UserButton.MenuItems>
+                        </UserButton>
                      )}
 
                    
@@ -52,11 +56,11 @@ const Navbar = () => {
                  className={`sm:hidden fixed inset-0 ${menuOpen ? 'w-full' : 'w-0'} overflow-hidden bg-white backdrop-blur shadow-xl rounded-lg z-[200] text-sm transition-all`}>
                     <div className='flex flex-col items-center justify-center h-full text-xl font-semibold gap-6 p-4'>
                         <Link to='/marketplace' onClick={() => setMenuOpen(false)}> Marketplace </Link>
-                        <button>Massages</button>
-                        <button>My Listing</button>
+                        <button onClick={openSignIn}>Massages</button>
+                        <button onClick={openSignIn}>My Listing</button>
 
                         
-                        <button 
+                        <button onClick={openSignIn} 
                          className=' cursor-pointer px-8 py-2 bg-indigo-500 hover:bg-indigo-600 transition text-white rounded-full'>
                          Login</button>
                         <XIcon onClick={()=> setMenuOpen(false)}
