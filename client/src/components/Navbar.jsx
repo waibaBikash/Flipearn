@@ -28,7 +28,7 @@ const Navbar = () => {
                      className='hidden sm:flex items-center gap-4 md:gap-8 max-md:text-sm text-gray-800'>
                         <Link to='/' onClick={() => scrollTo(0, 0)}> Home </Link>
                         <Link to='/marketplace' onClick={() => scrollTo(0, 0)}> Marketplace </Link>
-                        <Link to={user ? '/massages' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> Massages </Link>
+                        <Link to={user ? '/messages' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> Messages </Link>
                         <Link to={user ? '/my-listing' : '#'} onClick={() => user ? scrollTo(0, 0) : openSignIn()}> My Listing </Link>
                         
                     </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
                                 <UserButton.Action label='Marketplace' labelIcon={<GripIcon size={16}/>} onClick={()=> navigate('/marketplace')}/>
                             </UserButton.MenuItems>
                             <UserButton.MenuItems>
-                                <UserButton.Action label='messages' labelIcon={<MessageCircleMoreIcon size={16}/>} onClick={()=> navigate('/messages')}/>
+                                <UserButton.Action label='Messages' labelIcon={<MessageCircleMoreIcon size={16}/>} onClick={()=> navigate('/messages')}/>
                             </UserButton.MenuItems>
                             <UserButton.MenuItems>
                                 <UserButton.Action label='My-Listings' labelIcon={<ListIcon size={16}/>} onClick={()=> navigate('/my-listings')}/>
