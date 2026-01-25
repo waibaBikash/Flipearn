@@ -1,6 +1,6 @@
 import React from 'react'
 import { platformIcons } from '../assets/assets';
-import { BadgeCheck } from 'lucide-react';
+import { BadgeCheck, LineChart, User } from 'lucide-react';
 
 const ListingCard = ({listing}) => {
 
@@ -27,8 +27,27 @@ const ListingCard = ({listing}) => {
       <p>@{listing.username} -  <span className='capitalize'>{listing.platform}</span></p>
     </div>
      {listing.verified && <BadgeCheck className='text-green-500 ml-auto w-5 h-5' />}
-  </div>
-  </div>
+    </div>
+
+    {/* Stats */}
+
+     <div className='flex flex-wrap justify-between max-w-lg items-center gap-3 my-5'>
+        <div className='flex items-center text-sm text-gray-600'>
+          <User className='size-6 mr-1 text-gray-400' />
+          <span className='text-lg font-medium text-slate-800 mr-1.5'>{listing.followers_count.toLocaleString()}
+
+</span>
+          followers
+        </div>
+         {listing.engagement_rate && (
+         <div className='flex items-center text-sm text-gray-600'>
+            <LineChart className='size-6 mr-1 text-gray-400' />
+            <span className='text-lg font-medium text-slate-800 mr-1.5'>{listing.engagement_rate}</span>% engagement
+         </div>
+          )
+         }
+     </div>
+   </div>
     </div>
   )
 }
