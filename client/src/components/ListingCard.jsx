@@ -12,7 +12,8 @@ const ListingCard = ({listing}) => {
 { listing.featured &&(
   <>
     <p className='py-1' />
-    <div className='absolute top-0 left-0 w-full bg-gradient-to-r form-pink-500 to-purple-500 text-white text-center text-xs font-semibold py-1 tracking-wide uppercase'>Featured</div>
+    <div 
+    className='absolute top-0 left-0 w-full bg-gradient-to-r form-pink-500 to-purple-500 text-white text-center text-xs font-semibold py-1 tracking-wide uppercase'>Featured</div>
   </>
 )}
   
@@ -42,7 +43,10 @@ const ListingCard = ({listing}) => {
          {listing.engagement_rate && (
          <div className='flex items-center text-sm text-gray-600'>
             <LineChart className='size-6 mr-1 text-gray-400' />
-            <span className='text-lg font-medium text-slate-800 mr-1.5'>{listing.engagement_rate}</span>% engagement
+            <span 
+            className='text-lg font-medium text-slate-800 mr-1.5'>
+              {listing.engagement_rate}
+              </span>% engagement
          </div>
           )
          }
