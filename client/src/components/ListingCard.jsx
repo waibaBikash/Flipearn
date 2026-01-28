@@ -62,6 +62,10 @@ const ListingCard = ({listing}) => {
            </div>
          )}
       </div>
+      {/* description */}
+      <p className='text-sm text-gray-600 mb-4 line-clamp-2'>{listing.description}</p>
+
+      <hr className='my-5 border-gray-200' />
    </div>
     </div>
   )
