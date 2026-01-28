@@ -1,6 +1,6 @@
 import React from 'react'
 import { platformIcons } from '../assets/assets';
-import { BadgeCheck, LineChart, User } from 'lucide-react';
+import { BadgeCheck, LineChart, MapPin, User } from 'lucide-react';
 
 const ListingCard = ({listing}) => {
 
@@ -51,6 +51,17 @@ const ListingCard = ({listing}) => {
           )
          }
      </div>
+     {/* Tags and location */}
+
+      <div className='flex items-center gap-3 mb-3'>
+         <span className='text-xs font-medium bg-pink-100 text-pink-600 px-3 py-1 rounded-full capitalize'>{listing.niche}</span>
+         {listing.country && (
+           <div className='flex items-center text-gray-500 text-sm'>
+              <MapPin  className='size-6 mr-1 text-gray-400'/>
+              {listing.country}
+           </div>
+         )}
+      </div>
    </div>
     </div>
   )
