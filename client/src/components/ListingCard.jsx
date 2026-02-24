@@ -57,7 +57,8 @@ const ListingCard = ({listing}) => {
      {/* Tags and location */}
 
       <div className='flex items-center gap-3 mb-3'>
-         <span className='text-xs font-medium bg-pink-100 text-pink-600 px-3 py-1 rounded-full capitalize'>{listing.niche}</span>
+         <span 
+         className='text-xs font-medium bg-pink-100 text-pink-600 px-3 py-1 rounded-full capitalize'>{listing.niche}</span>
          {listing.country && (
            <div className='flex items-center text-gray-500 text-sm'>
               <MapPin  className='size-6 mr-1 text-gray-400'/>
@@ -77,7 +78,9 @@ const ListingCard = ({listing}) => {
                {currency}{listing.price.toLocaleString()}
             </span>
          </div>
-           <button onClick={()=> {navigate(`/listing/${listing.id}`); scrollTo(0,0)}} className='px-7 py-3 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition'>
+           <button 
+           onClick={()=> {navigate(`/listing/${listing.id}`); scrollTo(0,0)}} 
+           className='px-7 py-3 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition'>
              More Details
            </button>
       </div>
